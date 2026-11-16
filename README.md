@@ -1,27 +1,22 @@
 # Automatic-street-light-using-LDR.
 An automatic street lighting system that uses an LDR sensor to detect darkness and automatically switches ON the street lights at night and OFF during daytime, saving energy.
-# Automatic Street Light Using LDR
+int LDR_Variables = 0; 
 
-## Project Description
-This project uses an LDR sensor and Arduino Uno
-to automatically control a street light based on
-the surrounding light intensity.
-
-## Components Required
-- Arduino Uno
-- LDR Sensor
-- Resistor
-- LED
-- Connecting Wires
-- Breadboard
-
-## Working Principle
-The LDR detects the surrounding light intensity.
-During darkness, the Arduino switches ON the
-street light. During daylight, it switches OFF.
-
-## Controller
-Arduino Uno
-
-## Programming Language
-Arduino C/C++
+void setup() 
+{ 
+} 
+pinMode(A0, INPUT); 
+Serial.begin(9600); 
+pinMode(10, OUTPUT); 
+pinMode(0, OUTPUT); 
+void loop() 
+{ 
+} 
+LDR_Variables = analogRead(A0); 
+Serial.println(LDR_Variables); 
+if (LDR_Variables > 500) { 
+digitalWrite(10, HIGH); 
+} else { 
+digitalWrite(0, LOW); 
+} 
+delay(10); // Delay a little bit to improve simulation performance
